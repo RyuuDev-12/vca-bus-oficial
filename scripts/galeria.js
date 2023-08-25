@@ -43,15 +43,19 @@ conectarInfo(0)
 zoom()
 
 function zoom(){
-    selecionada.addEventListener('mousemove', (evento)=>{
-        const x = evento.clientX - evento.target.offsetLeft
-        const y = evento.clientY - evento.target.offsetTop
+    if(window.innerWidth > 710){
+        selecionada.addEventListener('mousemove', (evento)=>{
+            const x = evento.clientX - evento.target.offsetLeft
+            const y = evento.clientY - evento.target.offsetTop
 
-        selecionada.style.transformOrigin = `${x}px ${y}px`
-        selecionada.style.transform = 'scale(2)'
-    })
+            selecionada.style.transformOrigin = `${x}px ${y}px`
+            selecionada.style.transform = 'scale(2)'
+        })
 
-    selecionada.addEventListener('mouseout', ()=>{  
-        selecionada.style.transform = 'scale(1)'
-    })
+        selecionada.addEventListener('mouseout', ()=>{  
+            selecionada.style.transform = 'scale(1)'
+        })
+    }else{
+        selecionada.style.transformOrigin = 'auto'
+    }
 }
