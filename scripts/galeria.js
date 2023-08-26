@@ -9,7 +9,7 @@ let imgsDados = []
 
 cadastrarImg('https://a.imagem.app/bPVV1X.jpeg', 'Atlântico VCA', 'R19 - Centro x Rodoviária', '8885', 'Mercedes-Benz Of1721 Bluetec 5')
 cadastrarImg('../imgs/destaque4.jpg', 'Aguia Branca', 'Vitória da Conquista(BA) x São Paulo(SP)', '26250', 'Mercedes-Benz O-500RSD')
-cadastrarImg('../imgs/destaque7.jpg', 'Emtram', 'São Paulo(SP) x Pritiba (BA)', '5450', 'Scania K440iB 8x2')
+cadastrarImg('../imgs/destaque7.jpg', 'Emtram', 'São Paulo(SP) x Pritiba (BA)', '5450', 'Scania K440IB 8x2')
 cadastrarImg('../imgs/destaque.jpg', 'Rosa VDC', 'R02 Centro x Cidade Maravilhosa', '9500', 'Mercedes-Benz Of-1721 Bluetec 5')
 
 function cadastrarImg(url, empresa, linha, prefixo, chassi){
