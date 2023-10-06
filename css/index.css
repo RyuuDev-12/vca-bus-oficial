@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,800;1,800&family=Sora:wght@400;800&display=swap');
+
+:root{
+    --branco: #fff;
+    --roxo: #ff00bf;
+    --roxo-escuro-v1: #412a41;
+    --roxo-escuro-v2: #362736;
+}
+
+/* reset */
+
+html{font-size:62.5%}
+
+*{
+    color: var(--branco);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    text-decoration: none;
+}
+
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+body::-webkit-scrollbar{
+    background-color: var(--roxo-escuro-v1);
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: var(--roxo);
+    border-radius: 20px;
+    border: 4px solid var(--roxo-escuro-v1);
+}
+
+/* javascript */
+
+.btn-mobile{
+    display: none;
+}
+
+/* header */
+
+header, nav, #redes, footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header div{
+    display: flex;
+}
+
+header img{
+    margin-right: 1rem;
+    width: 2rem;
+    align-self: center;
+}
+
+header{
+    background-color: var(--roxo-escuro-v2);
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 1.5rem 7vw;
+    border-bottom: 2px solid var(--roxo);
+    align-items: center;
+}
+
+nav{
+    min-width: 400px;
+}
+
+header a{
+    font-size: 1.8rem;
+    color: var(--branco);
+    cursor: pointer;
+    padding: .5rem 1.5rem;
+    margin: 0 .5rem;
+    transition: .5s;
+    border-radius: 3px;
+}
+
+header a:hover{
+    background-color: var(--roxo);
+}
+
+/* main */
+
+main, #destaques, #sobre, footer{
+    background-color: var(--roxo-escuro-v2);
+    padding: 2rem 7vw;
+    border: none;
+}
+
+main{
+    background: url(../imgs/main-collection.jpg) no-repeat center;
+    background-size: 100% 100%;
+    height: 40rem;
+}
+
+h1{
+    margin-top: 10rem;
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 10rem;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 3px var(--roxo);
+}
+
+h1, main p{
+    color: white;
+}
+
+main p{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+/* destaques */
+
+h2{
+    font-family: 'sora';
+    font-weight: bold;
+    text-align: center;
+    font-size: 3rem;
+    padding: 3rem 0;
+}
+
+#destaques-grid, #sobre-grid{
+    display: grid;
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-gap: 20px;
+    justify-content: space-between;
+}
+
+#destaques-grid{
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#destaques a{
+    display: block;
+    margin: 2rem auto 0;
+    background-color: var(--roxo);
+    padding: 1rem 2rem;
+    width: max-content;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+#destaques a:hover{
+    background-color: var(--branco);
+    color: var(--roxo);
+}
+
+/* sobre mim */
+
+#sobre-grid{
+    grid-template-columns: repeat(4, 1fr) 4fr;
+    grid-template-areas: 
+    "texto texto texto texto perfil"
+    "redes redes redes redes perfil";
+}
+
+#sobre p{
+    font-size: 1.5rem;
+    grid-area: texto;
+    align-self: center;
+}
+
+#redes{
+    grid-area: redes;
+}
+
+#perfil{
+    justify-self: end;
+    grid-area: perfil;
+    clip-path: circle();
+    max-width: 300px;
+}
+
+/* footer */
+
+footer{
+    padding: 2rem 7vw;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+footer a{
+    color: rgb(94, 94, 255);
+    text-decoration: underline;
+}
+
+footer a:hover{
+    color: var(--roxo);
+}
+
+/* reponsivo */
+@media (max-width:1200px) {
+    main{
+        height: 30vw;
+    }
+
+    h1{
+        font-size: 10vw;
+        margin-top: 5vw;
+    }
+
+    main p{
+        font-size: 2rem;
+        max-width: 70%;
+    }
+}
+@media (max-width:730px) {
+    #destaques-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    footer{
+        flex-direction: column; 
+        text-align: center;
+        background-color: var(--roxo-escuro-v2);
+    }
+
+    footer p{
+        padding: 1rem 0;
+    }
+
+    h2{
+        font-size: 5vw;
+    }
+}
+
+@media(max-width:645px){
+    header{
+        font-size: 2rem;
+        height: 10rem;
+        padding: 2rem 5vw;
+    }
+
+    header img{
+        width: 3rem;
+    }
+
+    h1{
+        font-size: 8rem;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    main p{
+        font-size: 2.5rem;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    main{
+        height: 50vw;
+        background-image: url(../imgs/background-mobile.png);
+    }
+
+    h2{
+        font-size: 6vw;
+    }
+
+    #destaques-grid{
+        grid-template-columns: 1fr;
+    }
+
+    #sobre-grid{
+        display: inline;
+    }
+
+    #perfil{
+        margin: 0 auto;
+    }
+
+    #redes{
+        justify-content: center;
+        grid-column: 1/6;
+    }
+
+    /* javascript */
+
+    .btn-mobile{
+        margin-bottom: 2.5rem;
+        display: block;
+        transition: .5s;
+        width: 50px;
+        border: none;
+        background-color: var(--roxo);
+        height: 3px;
+        transition: .5s;
+    }
+
+    .btn-mobile::after, .btn-mobile::before{
+        content: '';
+        display: block;
+        width: 50px;
+        height:3px;
+        background-color: var(--roxo);
+        transition: .5s;
+    }
+    .btn-mobile::after{
+        margin: 1rem 0 0;
+    }
+    .btn-mobile::before{
+        margin: 1.2rem 0 0;
+    }
+    
+    nav{
+        display: none;
+    }
+
+    .ativo{
+        margin-top: 1rem;
+        transform: rotate(45deg);
+    }
+
+    .ativo::after{
+        margin: 0;
+        position: absolute;
+        top: 0;
+        transform: rotate(-90deg);
+    }
+    
+    .ativo::before{
+        margin: 0;
+        height: 0;
+
+    }
+    .nav-on{
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        margin-top: 9.8rem;
+        width: 100vw;
+        height: 70vh;
+        top: 0;
+        left: 0;
+        background-color: var(--roxo-escuro-v1);
+        border: 2px solid #ff00bf;
+        justify-content: space-around;
+        padding: 0rem 0;
+        animation: vir-da-esquerda 1s;
+        z-index: 1 !important;
+    }
+
+    .nav-on a{
+        width: max-content;
+        border-bottom: 2px solid var(--roxo);
+    }
+
+    @keyframes vir-da-esquerda{
+        0%{left:-100%;}
+        100%{left: 0;}
+    }
+}
