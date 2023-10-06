@@ -1,6 +1,0 @@
-Aqui anoto todas as coisas relacionadas a bootstrap que acho útil lembrar.
-
-fixed-bottom/fixed-top - fixam o elemento na extremidade especificada da página(bottom/top).
-
-sticky-bottom/stick-top - Fixam o conteúdo na tela assim como o fixed, porém isso só 
-acontece quando o elemento sai da tela na direção especificada(bottom/top).
