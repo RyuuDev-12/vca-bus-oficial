@@ -177,6 +177,14 @@ h2{
     grid-area: redes;
 }
 
+#redes a{
+    display: flex;
+    height: 40px;
+    align-items: center;
+    gap: 20px;
+    font-size: 15px;
+}
+
 #perfil{
     justify-self: end;
     grid-area: perfil;

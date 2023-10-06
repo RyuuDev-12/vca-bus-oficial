@@ -1,0 +1,113 @@
+Aqui anotarei tudo que eu achar importante enquanto estudo ReactJS
+
+Feito por RyuuDev - https://ryuudev-12.github.io/Portfolio-v1.3
+
+Conselhos para mim mesmo e outros que lerem:
+
+Sempre que o seu objetivo se tratar de variaveis no codigo, esqueça querySelector ou forEach, use SEMPRE 
+useState() para variavel e .map() para arrays e loops.
+
+/-----------------------------------------------------------------------------------------------------------------/
+
+useState - use State é o que chamamos de Hock e pode ser invocado no começo de um documento.jsx usando import:
+"import {useState} from 'react'" ele é usado para facilitar manipulação e atribuição de dados do html, seja de 
+um form ou uma tag em si.
+
+Sintaxe:
+
+const[x, setX] = useState()
+
+O use state pede dois parâmetros, o primeiro para criar uma variavel de mesmo nome, e o segundo para atribuir 
+a essa variavel o valor de onde vc quiser pegar, seja form ou tag.
+
+/-----------------------------------------------------------------------------------------------------------------/
+
+Renderização Condicional(if else)
+
+é uma estrutura praticamente identica ao if(ternário) do javascript apenas mudando a sintaxe e sendo obrigatório o uso do else.
+
+sintaxe:
+{condição?(
+  resultado
+):(
+  resultado alternativo
+)}
+
+/-----------------------------------------------------------------------------------------------------------------/
+
+Renderização de Listas(loop)
+
+para renderizar listas em formas de tag no react, primeiro criamos a lista dentro de um array comum, e usamos a 
+função map() do javascript.
+
+Sintaxe:
+
+//criando um componente comum
+export default const Lista(){
+
+//criando a lista em um array
+const meusItens = [3, 2, 4, 7]
+  return(
+    <h3>Essa é minha Lista:</h3>
+
+    //aprindo o colchete indicando que vou inserir um código dentro do html e executando a função map()
+    {meusItens.map(item =>{
+    
+    //Estou dizendo para o react que, para cada item da lista, deve-se criar uma tag <p> e inserindo o 
+    //item dentro. IMPORTANTE: para renderizar esse itens, eles precisam obrigatoriamente vir dentro de 
+    //uma tag, neste exemplo, usamos a tag <p>
+      <p>{item}</p>
+    })}
+  )
+}
+
+/-----------------------------------------------------------------------------------------------------------------/
+
+State Lift
+
+State lift é um metodo do react que permite que declarando esse metodo num componente pai, vc consegue configurar 
+um filho para determinar o valor de uma variavel e outro filho para mostrar essa variavel.
+
+No elemento pai, nós chamamos o useState, declaramos normalmente e criamos a constante para guarda-lo, logo em seguida aplicamos cada parametro do use state para o filho desejado separadamente, após isso basta ir no arquivo de cada filho e receber o argumento(valor ou setValor) como uma props, sendo o "setValor" o filho que vai determinar essa variavel e o "valor" sendo o filho que vai mostrar essa variavel.
+
+Syntaxe:
+
+// Componente pai
+
+import {useState} from 'react'
+
+funtion Pai(){
+  const [valor, setValor]
+
+  return(
+    <>
+       <Filho1 setValor={setValor}>
+       <Filho2 valor={valor}>
+    </>
+  )
+}
+
+// Componente filho 1
+
+export default function Filho1({setValor}){
+    return(
+        <div>
+            <p>Digite seu nome</p>
+            <input onChange={(e)=>setNome(e.target.value)} type="text" placeholder="Qual o seu nome?"/>
+        </div>
+    )
+}
+
+// Componente filho 2
+
+export default function Filho2({nome}){
+    return(
+        <>
+            {nome == ''?(
+                <p>Nome não preenchido!!</p>
+            ):(
+                <p>Seu nome é {nome}</p>
+            )}
+        </>
+    )
+}

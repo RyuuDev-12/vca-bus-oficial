@@ -1,0 +1,86 @@
+Neste arquivo vou começar a colocar todas as funções nativas do JS que eu aprender, no intuito de consultar quando 
+precisar e fixar na mente enquanto escrevo sobre elas.
+
+elemento.getBoundingClientRect() - Essa função permite pegar as informações da distância do elemento ao topo da página,
+do elemento à esquerda da página, a distancia do bottom ao topo e do right à esquerda da página. Util para animar entradas 
+de seções da página. Se quiser pegar apenas uma dessas informações, basta acrescentar "." e a informação desejada, exemplo:
+"elemento.getBoundingClientRect().top" outros valores aceitaveis no lugar de "top" são bottom, right, left, x, y, height, 
+width.
+
+LENDO A DOCUMENTAÇÃO - ao ler a documentação, leia de paragrafo a paragrafo com calma e entre eles pergunte a se mesmo o 
+que vc entendeu daquilo, e anote um resumo aqui.
+
+Aplicar ciclo ATER:
+
+A ula
+T eoria
+E xercicios
+R evisão
+
+-- replace() --
+
+O replace é usado para substituir qualquer parte de um array ou variavel.
+
+sintaxe:{
+    array.replace(parte, novaParte)
+}
+
+o primeiro parametro do replace deve ser a parte do array que voce deseja substituir, e o segundo parametro recebe o novo 
+valor que vai substituir o anterior.
+
+-- includes() --
+
+O includes é usado para verificar se o array possui o item colocado nos parenteses.
+
+sintaxe:{
+    array.includes(texto-ou-numreo)
+}
+
+--  map()  --
+
+O map é usado para transformar um array em um outro array com a mesma quantidade de itens. ele é feito para sempre 
+retornar um valor, evitar efeitos colaterais como o forEach faz.
+
+sintaxe:{
+    array.map((item, index, array) =>{
+        return algo
+    })
+}0
+
+-- filter() --
+
+O filter serve para obter um novo array com uma quantidade de itens menor que a do original.
+
+sintaxe:{
+    array.filter((item, index, array) => {
+        return algo
+    })
+}
+
+-- reduce() --
+
+O reduce pega o array original e o transforma ele em um só valor como uma soma por exemplo.
+
+sintaxe:{
+    array.reduce((accumulator, item, index, array) => algo, 0)
+}
+
+esse parametro novo vai armazenar o resultado da expressão e aplica-lo no accumulator da função seguinte. Portanto, ele 
+acumula resultados. O zero após a virgula determina o valor do accumulator no primeiro valor do array.
+
+-- every() --
+
+O every verifica se todos os itens de um array possui o parametro passado
+
+sintaxe:{
+    numeros.every(numero)
+}
+
+-- setInterval() --
+
+Método usado para executar uma função ou código a cada (x) milissegundos.
+
+Sintaxe: setInterval('função', 'milissegundos')
+
+O primeiro parametro você passa a função que deseja executar repetitivamente, o segundo parametro, vc determina o 
+intervalo dessas execuções. 1000 milissegundos equivalem a 1 segundo
